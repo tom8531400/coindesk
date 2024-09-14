@@ -18,6 +18,11 @@ public class CoindeskController {
     @Autowired
     private CoindeskService coindeskService;
 
+    /**
+     * 呼叫 coindeskAPI
+     *
+     * @return coindeskAPI資訊
+     */
     @RequestMapping(value = "/getCoindeskApi", method = RequestMethod.GET)
     public ApiResponse<Map<String, Object>> getCoindeskApi() {
         log.info("準備連接url..");
@@ -26,6 +31,11 @@ public class CoindeskController {
     }
 
 
+    /**
+     * 呼叫資料轉換的API
+     *
+     * @return 轉換後API資訊
+     */
     @RequestMapping(value = "/getCurrentPrice", method = RequestMethod.GET)
     public ApiResponse<Map<String, Map<String, Object>>> getCurrentPrice() {
         log.info("準備連接url..");

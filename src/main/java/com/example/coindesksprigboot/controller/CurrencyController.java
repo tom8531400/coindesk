@@ -30,7 +30,7 @@ public class CurrencyController {
      * @throws Exception ex
      */
     @RequestMapping(value = "/addCurrency", method = RequestMethod.POST)
-    public ApiResponse<CurrencyDto> addCurrency(@RequestBody CurrencyVo currencyVo) throws Exception {
+    public ApiResponse<CurrencyDto> addCurrency(@RequestBody CurrencyVo currencyVo) {
         log.info("存入幣種資訊: {}", currencyVo);
         try {
             CurrencyDto currency = currencyService.addCurrency(currencyVo);
