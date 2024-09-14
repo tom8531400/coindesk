@@ -7,21 +7,19 @@ import com.example.coindesksprigboot.response.ApiResponseEnum;
 import com.example.coindesksprigboot.service.CurrencyService;
 import com.example.coindesksprigboot.vo.CurrencyVo;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
 @SpringBootTest
 public class CurrencyControllerTest {
     @InjectMocks
@@ -112,6 +110,6 @@ public class CurrencyControllerTest {
         ApiResponse<Void> response = currencyController.deleteCurrency(id);
 
         assertEquals(ApiResponseEnum.SUCCESS, response.getCode());
-        assertEquals(null, response.getData());
+        assertNull(response.getData());
     }
 }
